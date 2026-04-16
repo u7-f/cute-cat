@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猫の可愛さ無限大 - The Purrfect Charm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* 紫と白のグラデーション */
+        .cat-gradient {
+            background: linear-gradient(135deg, #a78bfa 0%, #ddd6fe 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.1);
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #8b5cf6;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-violet-600 flex items-center gap-2">
+                <i class="fas fa-cat"></i> Neko Kawaii
+            </h1>
+            <nav class="hidden md:flex gap-8 font-medium">
+                <a href="#charm" class="hover:text-violet-500 transition">魅力</a>
+                <a href="#gallery" class="hover:text-violet-500 transition">ギャラリー</a>
+                <a href="#ai-cat" class="hover:text-violet-500 transition">AI猫生成</a>
+                <button onclick="meowGreeting()" class="bg-violet-600 text-white px-5 py-2 rounded-full hover:bg-violet-700 transition shadow-md">
+                    鳴き声を聞く
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center cat-gradient pt-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+                猫は、世界を癒やす。<br><span class="text-violet-50 text-4xl md:text-5xl">至福のひとときを。</span>
+            </h2>
+            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+                しなやかな動き、透き通った瞳、そして安らぎを与える存在感。<br>紫の静寂の中で、猫の魅力を再発見しましょう。
+            </p>
+            <a href="#charm" class="bg-white text-violet-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition active:scale-95 inline-block">
+                魅力を詳しく見る
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white">
+            <i class="fas fa-chevron-down text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- Charm Cards -->
+    <section id="charm" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-16 text-violet-700">猫に魅了される理由</h3>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="p-8 rounded-3xl bg-violet-50/50 border border-violet-100 card-hover">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl text-violet-500 mb-6 shadow-sm">
+                        🐾
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-violet-900">神秘的な瞳</h4>
+                    <p class="text-slate-600">宝石のように輝く瞳。暗闇で見せる鋭さと、甘える時の潤んだ瞳のギャップが魅力です。</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-violet-50/50 border border-violet-100 card-hover">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl text-violet-500 mb-6 shadow-sm">
+                        👂
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-violet-900">優雅なシルエット</h4>
+                    <p class="text-slate-600">歩く姿、座る姿。そのすべてが計算されたかのように美しく、見る者を飽きさせません。</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-violet-50/50 border border-violet-100 card-hover">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl text-violet-500 mb-6 shadow-sm">
+                        💤
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-violet-900">究極の癒やし</h4>
+                    <p class="text-slate-600">側にいるだけで空気をおだやかに変える力。猫との時間は何物にも代えがたい贅沢です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Cat Generator -->
+    <section id="ai-cat" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border border-violet-50">
+                <div class="text-center mb-10">
+                    <h3 class="text-3xl font-bold text-violet-700 mb-4">理想の猫を召喚する</h3>
+                    <p class="text-slate-600">AIが描き出す、あなただけの特別な猫。紫の魔法で具現化します。</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-4 mb-8">
+                    <input type="text" id="catPrompt" placeholder="例：月明かりの下で眠る高貴な黒猫" 
+                           class="flex-1 px-6 py-4 rounded-2xl border-2 border-violet-50 focus:border-violet-300 outline-none text-lg transition">
+                    <button onclick="generateCatImage()" id="genBtn" class="bg-violet-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-violet-700 transition flex items-center justify-center gap-2 shadow-lg">
+                        <span>猫を呼ぶ</span>
+                        <div id="btnLoader" class="loader hidden"></div>
+                    </button>
+                </div>
+
+                <div id="imageResult" class="min-h-[400px] flex items-center justify-center border-2 border-dashed border-violet-200 rounded-3xl bg-violet-50/30 overflow-hidden relative">
+                    <div id="placeholderText" class="text-center">
+                        <i class="fas fa-magic text-4xl text-violet-200 mb-4 block"></i>
+                        <p class="text-violet-300">ここにかわいい猫が表示されます</p>
+                    </div>
+                    <img id="catImg" class="w-full h-auto hidden object-cover" alt="Generated Cat">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-2xl font-bold mb-4 flex justify-center items-center gap-2">
+                <i class="fas fa-cat text-violet-400"></i> Neko Kawaii
+            </p>
+            <p class="text-slate-500">© 2025 猫の可愛さを伝える会 - Violet Edition</p>
+        </div>
+    </footer>
+
+    <script>
+        const apiKey = ""; // 実行環境から提供されます
+
+        // Exponential backoff retry helper
+        async function fetchWithRetry(url, options, retries = 5, backoff = 1000) {
+            try {
+                const response = await fetch(url, options);
+                if (!response.ok) throw new Error('API request failed');
+                return await response.json();
+            } catch (err) {
+                if (retries > 0) {
+                    await new Promise(resolve => setTimeout(resolve, backoff));
+                    return fetchWithRetry(url, options, retries - 1, backoff * 2);
+                }
+                throw err;
+            }
+        }
+
+        // PCM to WAV converter for TTS
+        function pcmToWav(pcmData, sampleRate) {
+            const buffer = new ArrayBuffer(44 + pcmData.length * 2);
+            const view = new DataView(buffer);
+            const writeString = (offset, string) => {
+                for (let i = 0; i < string.length; i++) {
+                    view.setUint8(offset + i, string.charCodeAt(i));
+                }
+            };
+            writeString(0, 'RIFF');
+            view.setUint32(4, 32 + pcmData.length * 2, true);
+            writeString(8, 'WAVE');
+            writeString(12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true);
+            view.setUint16(22, 1, true);
+            view.setUint32(24, sampleRate, true);
+            view.setUint32(28, sampleRate * 2, true);
+            view.setUint16(32, 2, true);
+            view.setUint16(34, 16, true);
+            writeString(36, 'data');
+            view.setUint32(40, pcmData.length * 2, true);
+            for (let i = 0; i < pcmData.length; i++) {
+                view.setInt16(44 + i * 2, pcmData[i], true);
+            }
+            return buffer;
+        }
+
+        // 猫の挨拶 (TTS)
+        async function meowGreeting() {
+            try {
+                const result = await fetchWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: "Kore: ニャーン。紫色の素敵な世界へようこそ。心ゆくまで癒やされていってくださいね。" }] }],
+                        generationConfig: {
+                            responseModalities: ["AUDIO"],
+                            speechConfig: {
+                                voiceConfig: {
+                                    prebuiltVoiceConfig: { voiceName: "Kore" }
+                                }
+                            }
+                        }
+                    })
+                });
+                const base64Audio = result.candidates[0].content.parts[0].inlineData.data;
+                const binaryString = atob(base64Audio);
+                const pcmData = new Int16Array(binaryString.length / 2);
+                for (let i = 0; i < pcmData.length; i++) {
+                    pcmData[i] = (binaryString.charCodeAt(i * 2 + 1) << 8) | binaryString.charCodeAt(i * 2);
+                }
+                const wavBuffer = pcmToWav(pcmData, 24000);
+                const blob = new Blob([wavBuffer], { type: 'audio/wav' });
+                const url = URL.createObjectURL(blob);
+                const audio = new Audio(url);
+                audio.play();
+            } catch (error) {
+                console.error("TTS Error:", error);
+            }
+        }
+
+        // 猫画像生成 (Imagen 4.0)
+        async function generateCatImage() {
+            const promptInput = document.getElementById('catPrompt');
+            const userPrompt = promptInput.value || "可愛すぎる猫、エレガント、宝石のような瞳";
+            const btn = document.getElementById('genBtn');
+            const loader = document.getElementById('btnLoader');
+            const imgElement = document.getElementById('catImg');
+            const placeholder = document.getElementById('placeholderText');
+
+            btn.disabled = true;
+            loader.classList.remove('hidden');
+            placeholder.innerHTML = `<p class="text-violet-400 animate-pulse">魔法をかけています...</p>`;
+            imgElement.classList.add('hidden');
+
+            try {
+                const result = await fetchWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        instances: [{ prompt: `Masterpiece, extremely cute cat, ${userPrompt}, elegant lighting, high quality, cinematic` }],
+                        parameters: { sampleCount: 1 }
+                    })
+                });
+                
+                const base64 = result.predictions[0].bytesBase64Encoded;
+                imgElement.src = `data:image/png;base64,${base64}`;
+                imgElement.onload = () => {
+                    imgElement.classList.remove('hidden');
+                    placeholder.classList.add('hidden');
+                };
+            } catch (error) {
+                console.error("Image Gen Error:", error);
+                placeholder.innerHTML = `<p class="text-red-400">ごめんなさい、猫を呼ぶのに失敗しました。もう一度試してニャ！</p>`;
+            } finally {
+                btn.disabled = false;
+                loader.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
